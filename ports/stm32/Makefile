@@ -5,7 +5,7 @@ ifdef BOARD_DIR
 BOARD ?= $(notdir $(BOARD_DIR:/=))
 else
 # If not given on the command line, then default to PYBV10.
-BOARD ?= PYBV10
+BOARD ?= MVP_CUST
 BOARD_DIR ?= boards/$(BOARD)
 endif
 
