@@ -9,3 +9,6 @@ MICROPY_HW_ENABLE_ISR_UART_FLASH_FUNCS_IN_RAM = 1
 
 # MicroPython settings
 MICROPY_VFS_LFS2 = 1
+
+FROZEN_MANIFEST ?= boards/PYBV10/manifest.py
+

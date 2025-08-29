@@ -6,12 +6,12 @@
 #define MICROPY_INCLUDED_STM32F4XX_HAL_CONF_H
 
 // Oscillator values in Hz
-#define HSE_VALUE (8000000)
+#define HSE_VALUE (16000000)
 #define LSE_VALUE (32768)
-#define EXTERNAL_CLOCK_VALUE (12288000)
+#define EXTERNAL_CLOCK_VALUE (12000000)
 
 // Oscillator timeouts in ms
-#define HSE_STARTUP_TIMEOUT (100)
+#define HSE_STARTUP_TIMEOUT (300)
 #define LSE_STARTUP_TIMEOUT (5000)
 
 #include "boards/stm32f4xx_hal_conf_base.h"

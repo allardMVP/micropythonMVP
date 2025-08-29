@@ -8,12 +8,21 @@
 #define MICROPY_HW_ENABLE_USB       (1)
 #define MICROPY_HW_ENABLE_SERVO     (1)
 #define MICROPY_HW_ENABLE_SDCARD    (1)
+#define MICROPY_HW_ENABLE_MMCARD    (1)
 
 // HSE is 8MHz, CPU freq set to 96MHz
-#define MICROPY_HW_CLK_PLLM         (8)
+#define MICROPY_HW_CLK_PLLM         (12)
 #define MICROPY_HW_CLK_PLLN         (192)
 #define MICROPY_HW_CLK_PLLP         (RCC_PLLP_DIV2)
 #define MICROPY_HW_CLK_PLLQ         (4)
+//#define MICROPY_HW_CLK_LAST_FREQ (1)
+
+
+// The pyboard has a 32kHz crystal for the RTC
+#define MICROPY_HW_RTC_USE_LSE      (1)
+#define MICROPY_HW_RTC_USE_US       (0)
+#define MICROPY_HW_RTC_USE_CALOUT   (1)
+
 
 #define MICROPY_HW_UART1_TX         (pin_B6)
 #define MICROPY_HW_UART1_RX         (pin_B3)
@@ -43,10 +52,10 @@
 #define MICROPY_HW_SPI2_SCK         (pin_C7)
 #define MICROPY_HW_SPI2_MISO        (pin_C2)
 #define MICROPY_HW_SPI2_MOSI        (pin_C3)
-#define MICROPY_HW_SPI3_NSS         (pin_A15)
-#define MICROPY_HW_SPI3_SCK         (pin_C10)
-#define MICROPY_HW_SPI3_MISO        (pin_C11)
-#define MICROPY_HW_SPI3_MOSI        (pin_B5)
+//#define MICROPY_HW_SPI3_NSS         (pin_A15)
+//#define MICROPY_HW_SPI3_SCK         (pin_C10)
+//#define MICROPY_HW_SPI3_MISO        (pin_C11)
+//#define MICROPY_HW_SPI3_MOSI        (pin_B5)
 #define MICROPY_HW_SPI4_NSS         (pin_E4)
 #define MICROPY_HW_SPI4_SCK         (pin_B13)
 #define MICROPY_HW_SPI4_MISO        (pin_E5)
@@ -81,7 +90,14 @@
 // USB config (CN13 - USB OTG FS)
 #define MICROPY_HW_USB_FS           (1)
 #define MICROPY_HW_USB_VBUS_DETECT_PIN (pin_A9)
-#define MICROPY_HW_USB_OTG_ID_PIN   (pin_A10)
+#define MICROPY_HW_USB_OTG_ID_PIN   (pin_A10)  // This is intentionally set to A9  typically this is A10 but for this board A9 works
 
 
 // Allard added the following to get MPY working on custom board
+// SD card detect switch
+//#define MICROPY_HW_SDCARD_DETECT_PIN        (pin_A3)
+//#define MICROPY_HW_SDCARD_DETECT_PULL       (GPIO_PULLDOWN)
+//#define MICROPY_HW_SDCARD_DETECT_PRESENT    (GPIO_PIN_RESET)
+#define MICROPY_HW_SDCARD_BUS_WIDTH         4
+
+

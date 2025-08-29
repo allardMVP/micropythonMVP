@@ -224,6 +224,7 @@ MP_NOINLINE static bool init_flash_fs(uint reset_mode) {
 #if MICROPY_HW_SDCARD_MOUNT_AT_BOOT
 static bool init_sdcard_fs(void) {
     bool first_part = true;
+    HAL_Delay(3000);
     for (int part_num = 1; part_num <= 5; ++part_num) {
         // create vfs object
         fs_user_mount_t *vfs_fat = m_new_obj_maybe(fs_user_mount_t);
